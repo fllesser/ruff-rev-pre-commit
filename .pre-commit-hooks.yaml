@@ -1,6 +1,6 @@
-- id: ruff-rev-check
-  name: ruff rev check
-  description: "check ruff version in `uv.lock` and `.pre-commit-config.yaml`"
+- id: ruff-rev-sync
+  name: ruff rev sync
+  description: "sync ruff version in `uv.lock` to `.pre-commit-config.yaml`"
   language: python
-  entry: python ./script.py
+  entry: ruff-rev-sync
   files: uv.lock

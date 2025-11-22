@@ -3,7 +3,7 @@ from re import search, sub
 
 
 def main():
-    project_root = Path(__file__).parent
+    project_root = Path.cwd()
     uv_lock_path = project_root / "uv.lock"
     pre_commit_config_path = project_root / ".pre-commit-config.yaml"
 
@@ -22,7 +22,8 @@ def main():
     # [[package]]
     # name = "ruff"
     # version = "0.14.4"
-    matched = search(r'name = "ruff"\nversion = "([^"]+)"', uv_lock_content)
+    pattern = r'name = "ruff"\nversion = "([^"]+)"'
+    matched = search(pattern, uv_lock_content)
     if not matched:
         print("ruff version not found in uv.lock")
         return
@@ -48,7 +49,3 @@ def main():
             print(".pre-commit-config.yaml is already up to date.")
     else:
         print("ruff-pre-commit repo not found in .pre-commit-config.yaml")
-
-
-if __name__ == "__main__":
-    main()

@@ -1,0 +1,12 @@
+[project]
+name = "ruff-rev-pre-commit"
+version = "1.0.0"
+description = "Sync Ruff version from `uv.lock` to `.pre-commit-config.yaml` (unidirectional)"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.scripts]
+ruff-rev-sync = "ruff_rev_sync:main"
+
+[tool.uv]
+package = true
