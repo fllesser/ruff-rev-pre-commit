@@ -1,4 +1,4 @@
-# ruff-rev-pre-commit
+# ruff-rev-sync-pre-commit
 
 A pre-commit hook to automatically synchronize your [Ruff](https://github.com/astral-sh/ruff) version in `.pre-commit-config.yaml` with the version locked in `uv.lock`.
 
@@ -17,7 +17,7 @@ Add this hook to your `.pre-commit-config.yaml`. It should run *before* the main
 
 ```yaml
 repos:
-  - repo: https://github.com/lesfreire/ruff-rev-pre-commit
+  - repo: https://github.com/lesfreire/ruff-rev-sync-pre-commit
     rev: v1.0.0  # Use the latest tag
     hooks:
       - id: ruff-rev-sync
